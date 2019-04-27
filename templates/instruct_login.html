@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/marks.css') }}">
+</head>
+<body>
+
+	<a href="/homepage">Back</a>
+	<h1>Instructor Name:{current_user.username}</h1>
+
+	<div class=content>
+			<div class = cols>
+			
+			<p>
+				{% for obj in columns %}
+
+						<p>{{obj[1]}}:{{item}}</p>
+						<h1></h1>
+				
+				{% endfor %}
+			</p>
+		</div>
+		
+
+		<div class=input>
+			{% for item in query[0] %}
+				<p>{{item}}</p>
+				<button>Submit remark request</button>
+				<h1></h1>
+			
+			{% endfor %}
+
+		</div>
+	</div>
+
+
+</body>
+</html>
